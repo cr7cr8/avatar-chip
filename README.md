@@ -1,8 +1,8 @@
 material ui  avatar-chip
 ------------------------------------
 
-import { Typography, Button, ButtonGroup, Container, Paper, Box, Avatar, Grid } from "@material-ui/core";
-import { AvatarChip, AvatarLogo, } from "avatar-chip";
+    import { Typography, Button, ButtonGroup, Container, Paper, Box, Avatar, Grid } from "@material-ui/core";
+    import { AvatarChip, AvatarLogo, } from "avatar-chip";
 
 
 
