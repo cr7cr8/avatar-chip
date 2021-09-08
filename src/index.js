@@ -1,4 +1,4 @@
-import { AvatarLogo, AvatarChip } from "./components/avatarchip2"
+import { AvatarLogo, AvatarChip } from "./components/avatar-chip"
 
 module.exports = {
 
