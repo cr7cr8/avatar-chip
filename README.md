@@ -6,7 +6,7 @@ material ui  avatar-chip
 
 
 
-  <AvatarChip
+    <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} personName={"毛fdsdsdsdsdsd帅"}
 
         //onClick={function () { alert("fdfdsfsd") }}
