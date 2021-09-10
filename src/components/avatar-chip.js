@@ -2,7 +2,7 @@ import React, { Component } from "react"
 //import bankLogo from "./bankLogo.png";
 
 
-import { withStyles, makeStyles,  } from '@material-ui/styles'
+import { withStyles, makeStyles, } from '@material-ui/styles'
 
 import { createMuiTheme, Avatar, Chip, Popover, Typography } from "@material-ui/core";
 
@@ -35,20 +35,22 @@ function breakpointsAttribute(...args) {
   }
 }
 const breakpoints = createBreakpoints({})
-const withStylesProps = (makingStylesFn) => {
-  return (Component) => {
-    return ({ children, ...props }) => {
-      const Comp = withStyles(makingStylesFn(props))(Component);
-      return <Comp {...props}>{children}</Comp>;
-    };
-  }
-}
+// const withStylesProps = (makingStylesFn) => {
+//   return (Component) => {
+//     return ({ children, ...props }) => {
+//       const Comp = withStyles(makingStylesFn(props))(Component);
+//       return <Comp {...props}>{children}</Comp>;
+//     };
+//   }
+// }
 
-const muiTheme = createMuiTheme({})
+//const muiTheme = createMuiTheme({})
 
 ////////////////////////////////////////////////////////////////////////////
 
 const makingStyleObj = function (...args) {
+
+  const theme = args[0]
 
   return {
     avatarSize: ({ size = "40px", personName, ...props }) => {
@@ -107,8 +109,8 @@ const makingStyleObj = function (...args) {
     paper: () => {
       return {
         pointerEvents: "auto",
-        padding: muiTheme.spacing(1),
-
+        // padding: muiTheme.spacing(1),
+        padding: theme.spacing(1),
       }
     },
 
@@ -129,8 +131,8 @@ class AvatarLogo_ extends Component {
 }
 
 
-export const AvatarLogo = withStylesProps(makingStyleObj)(AvatarLogo_);
-
+//export const AvatarLogo = withStylesProps(makingStyleObj)(AvatarLogo_);
+export const AvatarLogo = withStyles(makingStyleObj)(AvatarLogo_);
 
 
 class AvatarChip_ extends Component {
@@ -243,6 +245,6 @@ class AvatarChip_ extends Component {
     )
   }
 }
-export  const AvatarChip = withStylesProps(makingStyleObj)(AvatarChip_);
-
+//export  const AvatarChip = withStylesProps(makingStyleObj)(AvatarChip_);
+export const AvatarChip = withStyles(makingStyleObj)(AvatarChip_);
 
