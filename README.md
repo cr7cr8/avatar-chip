@@ -41,6 +41,8 @@ material ui  avatar-chip
 
 
 https://github.com/cr7cr8/avatar-chip.git
+git push -f origin master
+
 
 npm version patch
 npm publish
