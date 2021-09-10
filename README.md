@@ -5,13 +5,25 @@ avatarchip based on material-ui Chip component
     import { AvatarChip, AvatarLogo, } from "avatar-chip";
 
 
-
+    //default avatar is based on personName, if "src" is not provided
+    //default label is based on personName, if "label" is not provided
     <AvatarChip
-        size={["4rem", "3rem", "2rem", "1.5rem"]} personName={"毛fdsdsdsdsdsd帅"}
-
+        size={["4rem", "3rem", "2rem", "1.5rem"]} 
+        personName={"bob"}
         //onClick={function () { alert("fdfdsfsd") }}
         //avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
-        //src="https://picsum.photos/200/300"
+        //src="https://picsum.photos/200/300" 
+        //label="theLabel"
+    />
+
+
+
+     <AvatarChip
+        size={["4rem", "3rem", "2rem", "1.5rem"]} personName={"毛fdsdsdsdsdsd帅"}
+        style={{backgroundColor:"skyblue",color:"blue"}}
+        onClick={function () { alert("clicked") }}
+        avatarProps={{ size:"5rem", onClick: function (e) { e.stopPropagation(); alert("hi") } }}
+        src="https://picsum.photos/200/300"
         label={
           <>
             <Typography variant="h5" style={{  }}>
