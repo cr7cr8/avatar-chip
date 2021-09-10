@@ -1,12 +1,13 @@
 React avatar-chip based on "material-ui Chip" component and "muliti-avatar" 
 ------------------------------------
+import dependency
 
     import { Typography, Button, ButtonGroup, Container, Paper, Box, Avatar, Grid } from "@material-ui/core";
     import { AvatarChip, AvatarLogo, } from "avatar-chip";
 
 
-    //default avatar is based on personName, if "src" is not provided
-    //default label is based on personName, if "label" is not provided
+default avatar is based on personName, if "src" is not provided
+default label is based on personName, if "label" is not provided
     <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} 
         personName={"bob"}
@@ -16,7 +17,7 @@ React avatar-chip based on "material-ui Chip" component and "muliti-avatar"
         //label={<>theLabel</>}
     />
 
-    //just avatar, no label
+just avatar, no label
     <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} 
         personName={"mike"}
