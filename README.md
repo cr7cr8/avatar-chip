@@ -61,10 +61,11 @@ React avatar-chip based on "material-ui Chip" component and "muliti-avatar"
  
 ------------------------------------
 
+Demo https://vibrant-liskov-396f96.netlify.app/
+
 
 https://github.com/cr7cr8/avatar-chip.git
 
-Demo https://vibrant-liskov-396f96.netlify.app/
 
 git push -f origin master
 
