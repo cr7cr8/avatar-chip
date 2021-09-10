@@ -1,4 +1,4 @@
-React avatar-chip based on "material-ui Chip" component and "multi-avatar" 
+React avatar-chip based on  the Chip component of "material-ui" and "@multiavatar/multiavatar" package 
 
 ![aCapture](https://user-images.githubusercontent.com/106660/132795601-b5862112-d3fb-43b6-a6fe-e28e78eb867c.JPG)
 
@@ -10,8 +10,7 @@ import dependencies
     import { AvatarChip, AvatarLogo, } from "avatar-chip";
 
 
-default avatar is based on personName if "src" is not provided,  
-
+default avatar is based on personName if "src" is not provided,     
 default label is based on personName, if "label" is not provided
     
     <AvatarChip
