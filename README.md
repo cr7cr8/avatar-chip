@@ -18,11 +18,11 @@ avatarchip based on material-ui Chip component
 
 
 
-     <AvatarChip
+    <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} personName={"毛fdsdsdsdsdsd帅"}
         style={{backgroundColor:"skyblue",color:"blue"}}
         onClick={function () { alert("clicked") }}
-        avatarProps={{ size:"5rem", onClick: function (e) { e.stopPropagation(); alert("hi") } }}
+        avatarProps={{ size:["1rem","2rem","3rem","4rem","5rem"], onClick: function (e) { e.stopPropagation(); alert("hi") } }}
         src="https://picsum.photos/200/300"
         label={
           <>
@@ -46,6 +46,7 @@ avatarchip based on material-ui Chip component
           </>
         }
       />
+
 
  
 ------------------------------------
