@@ -1,6 +1,10 @@
 React avatar-chip based on "material-ui Chip" component and "muliti-avatar" 
+
+![aCapture](https://user-images.githubusercontent.com/106660/132795601-b5862112-d3fb-43b6-a6fe-e28e78eb867c.JPG)
+
+
 ------------------------------------
-import dependency
+import dependencies
 
     import { Typography, Button, ButtonGroup, Container, Paper, Box, Avatar, Grid } from "@material-ui/core";
     import { AvatarChip, AvatarLogo, } from "avatar-chip";
@@ -8,28 +12,27 @@ import dependency
 
 default avatar is based on personName, if "src" is not provided
 default label is based on personName, if "label" is not provided
+    
     <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} 
         personName={"bob"}
-        //onClick={function () { alert("hello bob") }}
-        //avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
-        //src="https://picsum.photos/200/300" 
-        //label={<>theLabel</>}
-    />
+     />
 
 just avatar, no label
+   
     <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} 
         personName={"mike"}
         onClick={function () { alert("hello mike") }}
         avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
-        //src="https://picsum.photos/200/300" 
+        src="https://picsum.photos/200/300" 
         label={<></>}
-    />
+     />
 
 
+Avatar with hover tip
 
-    <AvatarChip
+      <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} personName={"毛fdsdsdsdsdsd帅"}
         style={{backgroundColor:"skyblue",color:"blue"}}
         onClick={function () { alert("clicked") }}
@@ -62,15 +65,16 @@ just avatar, no label
  
 ------------------------------------
 
-Demo https://vibrant-liskov-396f96.netlify.app/
+### [Demo](https://vibrant-liskov-396f96.netlify.app/) 
+
+https://vibrant-liskov-396f96.netlify.app/
 
 
-https://github.com/cr7cr8/avatar-chip.git
+
+GitHub https://github.com/cr7cr8/avatar-chip.git
+
 
  
 git push -f origin master
-
-
 npm version patch
 npm publish
-
