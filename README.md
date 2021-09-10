@@ -16,6 +16,16 @@ avatarchip based on material-ui Chip component
         //label="theLabel"
     />
 
+    //just avatar, no label
+    <AvatarChip
+        size={["4rem", "3rem", "2rem", "1.5rem"]} 
+        personName={"mike"}
+        //onClick={function () { alert("fdfdsfsd") }}
+        //avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
+        //src="https://picsum.photos/200/300" 
+        label={<></>}
+    />
+
 
 
     <AvatarChip
