@@ -1,4 +1,4 @@
-React avatar-chip based on "material-ui Chip" component and "muliti-avatar" 
+React avatar-chip based on "material-ui Chip" component and "multi-avatar" 
 
 ![aCapture](https://user-images.githubusercontent.com/106660/132795601-b5862112-d3fb-43b6-a6fe-e28e78eb867c.JPG)
 
