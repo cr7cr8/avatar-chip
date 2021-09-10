@@ -10,7 +10,7 @@ React avatar-chip based on "material-ui Chip" component and "muliti-avatar"
     <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} 
         personName={"bob"}
-        //onClick={function () { alert("hello "+bob) }}
+        //onClick={function () { alert("hello bob") }}
         //avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
         //src="https://picsum.photos/200/300" 
         //label={<>theLabel</>}
@@ -20,7 +20,7 @@ React avatar-chip based on "material-ui Chip" component and "muliti-avatar"
     <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} 
         personName={"mike"}
-        //onClick={function () { alert("hello "+mike) }}
+        onClick={function () { alert("hello mike") }}
         avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
         //src="https://picsum.photos/200/300" 
         label={<></>}
