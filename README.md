@@ -1,4 +1,4 @@
-material ui  avatar-chip
+avatarchip based on material-ui Chip component
 ------------------------------------
 
     import { Typography, Button, ButtonGroup, Container, Paper, Box, Avatar, Grid } from "@material-ui/core";
@@ -14,7 +14,6 @@ material ui  avatar-chip
         //src="https://picsum.photos/200/300"
         label={
           <>
-
             <Typography variant="h5" style={{  }}>
               06355 马小帅
               </Typography>
