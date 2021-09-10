@@ -10,7 +10,7 @@ import dependencies
     import { AvatarChip, AvatarLogo, } from "avatar-chip";
 
 
-default avatar is based on personName, if "src" is not provided
+default avatar is based on personName, if "src" is not provided   
 default label is based on personName, if "label" is not provided
     
     <AvatarChip
