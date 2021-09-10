@@ -1,4 +1,4 @@
-react avatarchip based on material-ui Chip component
+React avatar-chip based on "material-ui Chip" component and "muliti-avatar" 
 ------------------------------------
 
     import { Typography, Button, ButtonGroup, Container, Paper, Box, Avatar, Grid } from "@material-ui/core";
