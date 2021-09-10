@@ -31,6 +31,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir lib"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "支持cr7",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "avatar",
+    "chip",
+    "avatar-chip"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cr7cr8/avatar-chip.git"
+  }
 }
