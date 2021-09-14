@@ -14,7 +14,8 @@ default avatar is based on personName if "src" is not provided,
 default label is based on personName, if "label" is not provided
     
     <AvatarChip
-        size={["4rem", "3rem", "2rem", "1.5rem"]} 
+        size={["5.2rem", "3.9rem", "2.6rem", "1.8rem"]}  //avatar size array for different screen width 
+        labelSize={["4rem", "3rem", "2rem", "1.5rem"]}   //label size array for different screen width 
         personName={"bob"}
         lift={6}
      />
@@ -49,7 +50,7 @@ Avatar with hover tip
 
       <AvatarChip
         size={["1rem","2rem","3rem","4rem","5rem"]}  //avatarSize
-        labelSize={["4rem", "3rem", "2rem", "1.5rem"]} personName={"毛fdsdsdsdsdsd帅"}
+        personName={"毛fdsdsdsdsdsd帅"}
         style={{backgroundColor:"skyblue",color:"blue"}}
         onClick={function () { alert("clicked") }}
         avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
