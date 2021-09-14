@@ -6,7 +6,7 @@ import { Avatar, Chip, Popover, Typography, } from "@material-ui/core";
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 
 import multiavatar from '@multiavatar/multiavatar';
-import classNames from 'classnames';
+//import classNames from 'classnames';
 import styled from 'styled-components'
 
 
@@ -171,19 +171,19 @@ class TwoLineLabel_ extends Component {
     const { lineTop, lineDown, className, theme, ...props } = this.props
     const { typoUpCss, typoDownCss } = this.props.classes
 
-    const allClassNamesTop = classNames({
-      [typoUpCss]: false,
-      [className]: true
-    })
-    const allClassNamesDown = classNames({
-      [typoDownCss]: false,
-      [className]: true
-    })
+    // const allClassNamesTop = classNames({
+    //   [typoUpCss]: false,
+    //   [className]: true
+    // })
+    // const allClassNamesDown = classNames({
+    //   [typoDownCss]: false,
+    //   [className]: true
+    // })
     return (
 
       <>
-        <Typography color="textPrimary" className={allClassNamesTop} >{lineTop}</Typography>
-        <Typography color="textSecondary" className={allClassNamesDown} >{lineDown}</Typography>
+        <Typography color="textPrimary" className={className} >{lineTop}</Typography>
+        <Typography color="textSecondary" className={className} >{lineDown}</Typography>
       </>
     )
   }
