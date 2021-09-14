@@ -84,7 +84,7 @@ function styleObj({ lgTextSizeArr, textSizeArr, breakpointsAttribute, multiplyAr
         margin: 0,
         boxShadow: theme.shadows[lift],
 
-       
+
         overflow: "hidden",
 
         ...breakpointsAttribute(["borderRadius", "999999px"]),
@@ -273,26 +273,28 @@ class AvatarChip_ extends Component {
     const { src, ...avatarRest } = this.props.avatarProps || {}
     console.log(theme)
     return (
-    
+
       <div style={{ width: "fit-content", display: "inline-block" }}    >
 
         <Chip
           classes={{ root: classes.chipCss }}
           {...logoOn && { avatar: <AvatarLogo size={size} personName={personName} src={this.props.src}{...avatarRest} /> }}
-     
+
           label={personName}
           {...rest}
 
 
 
-          {...(this.props.label && this.props.label.type && this.props.label.type.Naked && this.props.label.type.Naked.name === "TwoLineLabel_")
+          // {...(this.props.label && this.props.label.type && this.props.label.type.Naked && this.props.label.type.Naked.name === "TwoLineLabel_")
+          // && labelOn && {
+          {...(this.props && this.props.label && this.props.label.type && this.props.label.type.Naked && this.props.label.type.Naked.render.displayName === "Styled(TwoLineLabel_)")
           && labelOn && {
 
             label: <TwoLineLabel
               {...this.props.label.props}
               logoOn={this.props.logoOn}
               labelOn={this.props.labelOn}
-         
+
               {...(Array.isArray(this.props.labelSize) || (typeof (this.props.labelSize) === "string")) && { size: this.props.labelSize, }}
             />
           }}
@@ -305,7 +307,7 @@ class AvatarChip_ extends Component {
               {...this.props.children.props}
               logoOn={this.props.logoOn}
               labelOn={this.props.labelOn}
-           
+
               {...(Array.isArray(this.props.labelSize) || (typeof (this.props.labelSize) === "string")) && { size: this.props.labelSize, }}
             />
           }}
@@ -314,21 +316,21 @@ class AvatarChip_ extends Component {
 
           {...this.props.hoverContent && { onMouseEnter: this.handlePopoverOpen }}
           {...this.props.hoverContent && { onMouseLeave: this.handlePopoverClose }}
-       
+
           ref={(element) => { this.anchorRef = element }}
         />
 
         {this.props.hoverContent && <Popover
 
           marginThreshold={0}
-       
+
           className={classes.popover}
           classes={{
             paper: classes.paper,
           }}
           open={this.state.open}
           anchorReference="anchorPosition"
-        
+
           anchorEl={this.anchorRef}
           anchorOrigin={{
             horizontal: "left",
@@ -348,7 +350,7 @@ class AvatarChip_ extends Component {
         </Popover>}
 
       </div>
-     
+
     )
   }
 }
