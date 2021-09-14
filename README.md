@@ -26,7 +26,8 @@ just avatar, no label
         onClick={function () { alert("hello mike") }}
         avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
         src="https://picsum.photos/200/300" 
-        label={<></>}
+        labelOn={false}
+       
      />
 
 
