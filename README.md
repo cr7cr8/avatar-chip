@@ -16,6 +16,7 @@ default label is based on personName, if "label" is not provided
     <AvatarChip
         size={["4rem", "3rem", "2rem", "1.5rem"]} 
         personName={"bob"}
+        lift={6}
      />
 
 just avatar, no label
