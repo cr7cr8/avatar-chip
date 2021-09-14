@@ -47,10 +47,11 @@ just label, no avatar
 Avatar with hover tip
 
       <AvatarChip
-        size={["4rem", "3rem", "2rem", "1.5rem"]} personName={"毛fdsdsdsdsdsd帅"}
+        size={["1rem","2rem","3rem","4rem","5rem"]}
+        labelSize={["4rem", "3rem", "2rem", "1.5rem"]} personName={"毛fdsdsdsdsdsd帅"}
         style={{backgroundColor:"skyblue",color:"blue"}}
         onClick={function () { alert("clicked") }}
-        avatarProps={{ size:["1rem","2rem","3rem","4rem","5rem"], onClick: function (e) { e.stopPropagation(); alert("hi") } }}
+        avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
         src="https://picsum.photos/200/300"
         label={
           <>
