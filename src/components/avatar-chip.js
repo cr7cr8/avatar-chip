@@ -172,11 +172,11 @@ class TwoLineLabel_ extends Component {
     const { typoUpCss, typoDownCss } = this.props.classes
 
     const allClassNamesTop = classNames({
-      [typoUpCss]: true,
+      [typoUpCss]: false,
       [className]: true
     })
     const allClassNamesDown = classNames({
-      [typoDownCss]: true,
+      [typoDownCss]: false,
       [className]: true
     })
     return (
@@ -195,11 +195,49 @@ class TwoLineLabel_ extends Component {
 export const TwoLineLabelWithStyled = styled(TwoLineLabel_).withConfig({
   shouldForwardProp: (propName, defaultValidatorFn) => { return true }
 })`
-  ${ (props) => {
-    return {
-      ...props.cssStyle
-    }
-  }} 
+    ${ (props) => {
+
+
+const { theme: { textSizeArr, breakpointsAttribute, multiplyArr }, size, ...rest } = props
+
+
+
+const size_ = Array.isArray(size)
+  ? size
+  : typeof (size) === "string"
+    ? [size]
+    : textSizeArr
+
+
+return {
+  "&:first-of-type": {
+    lineHeight: "115%",
+    // backgroundColor:"pink",
+    margin: 0,
+    padding: 0,
+    ...breakpointsAttribute(
+      ["fontSize", multiplyArr(size_, 65 / 100)],
+
+      //   ((!logoOn) && labelOn) ? ["marginLeft", multiplyArr(size_, 40 / 100)] : []// not updating with props updating logoOn labelOn
+
+    ),
+  },
+  "&:first-of-type ~ &": {
+    lineHeight: "115%",
+    // backgroundColor:"pink",
+    margin: 0,
+    padding: 0,
+    ...breakpointsAttribute(
+      ["fontSize", multiplyArr(size_, 35 / 100)],
+
+      //   ((!logoOn) && labelOn) ? ["marginLeft", multiplyArr(size_, 40 / 100)] : []// not updating with props updating logoOn labelOn
+
+    ),
+  }
+}
+
+
+}} 
 `
 
 
@@ -357,3 +395,6 @@ class AvatarChip_ extends Component {
 
 export const AvatarLogo = withStyles(styleObj, { withTheme: true })(AvatarLogo_);
 export const AvatarChip = withStyles(styleObj, { withTheme: true })(AvatarChip_);
+
+
+
