@@ -1,4 +1,6 @@
-React avatar-chip based on  the Chip component of "material-ui" and "@multiavatar/multiavatar" package 
+### React avatar-chip based on  the Chip component of "material-ui" and "@multiavatar/multiavatar" package 
+
+#### Note: previous version 2.0.13 was Buggy, fixed in later version
 
 ![aCapture](https://user-images.githubusercontent.com/106660/132795601-b5862112-d3fb-43b6-a6fe-e28e78eb867c.JPG)
 
@@ -17,7 +19,7 @@ default label is based on personName, if "label" is not provided
         size={["5.2rem", "3.9rem", "2.6rem", "1.8rem"]}  //avatar size array for different screen width 
         labelSize={["4rem", "3rem", "2rem", "1.5rem"]}   //label size array for different screen width 
         personName={"bob"}
-        lift={6}
+       
      />
 
 just avatar, no label
@@ -48,28 +50,21 @@ just label, no avatar
 
 Avatar with hover tip
 
-      <AvatarChip
-        size={["1rem","2rem","3rem","4rem","5rem"]}  //avatarSize
+     <AvatarChip
+        size={["1rem", "2rem", "3rem", "4rem", "5rem"]}  //avatarSize
         personName={"毛fdsdsdsdsdsd帅"}
-        style={{backgroundColor:"skyblue",color:"blue"}}
+        style={{ backgroundColor: "skyblue", color: "blue" }}
         onClick={function () { alert("clicked") }}
         avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
         src="https://picsum.photos/200/300"
         label={
-          <>
-            <Typography variant="h5" style={{  }}>
-              06355 马小帅
-              </Typography>
-            <Typography variant="h5" style={{ fontSize: "0.8rem", display: "block", color: "gray" }}>
-              银行总行法律合规部
-              </Typography>
-          </>
+          <TwoLineLabel lineTop="06355 马小帅" lineDown="银行总行法律合规部" />
         }
         hoverContent={
           <>
             <div style={{ display: "flex", justifyContent: "center" }}><AvatarLogo size={["2.8rem"]} personName={"毛fdsdsdsdsdsd帅"} /></div>
             <Typography variant="h5" style={{ fontSize: "1rem", }}>
-            06355 马小帅
+              06355 马小帅
               </Typography>
             <Typography variant="h5" style={{ fontSize: "0.8rem", display: "block", color: "gray" }}>
               银行总行法律合规部
