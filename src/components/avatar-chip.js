@@ -121,37 +121,37 @@ function styleObj({ lgTextSizeArr, textSizeArr, ...theme }) {
     typoUpCss: ({ size, logoOn, labelOn }) => {
 
 
-      const size_ = Array.isArray(size)
-        ? size
-        : typeof (size) === "string"
-          ? [size]
-          : textSizeArr
+      // const size_ = Array.isArray(size)
+      //   ? size
+      //   : typeof (size) === "string"
+      //     ? [size]
+      //     : textSizeArr
       return {
-        lineHeight: "115%",
-        // backgroundColor:"pink",
-        margin: 0,
-        padding: 0,
-        ...breakpointsAttribute(
-          ["fontSize", multiplyArr(size_, 65 / 100)],
-        ),
+        // lineHeight: "115%",
+        // // backgroundColor:"pink",
+        // margin: 0,
+        // padding: 0,
+        // ...breakpointsAttribute(
+        //   ["fontSize", multiplyArr(size_, 65 / 100)],
+        // ),
 
       }
     },
     typoDownCss: ({ size, logoOn, labelOn }) => {
 
-      const size_ = Array.isArray(size)
-        ? size
-        : typeof (size) === "string"
-          ? [size]
-          : textSizeArr
+      // const size_ = Array.isArray(size)
+      //   ? size
+      //   : typeof (size) === "string"
+      //     ? [size]
+      //     : textSizeArr
       return {
-        lineHeight: "115%",
-        //  backgroundColor:"lightblue",
-        margin: 0,
-        padding: 0,
-        ...breakpointsAttribute(
-          ["fontSize", multiplyArr(size_, 35 / 100)],
-        ),
+        // lineHeight: "115%",
+        // //  backgroundColor:"lightblue",
+        // margin: 0,
+        // padding: 0,
+        // ...breakpointsAttribute(
+        //   ["fontSize", multiplyArr(size_, 35 / 100)],
+        //),
       }
     },
     popover: () => { return { pointerEvents: 'none', } },
@@ -161,7 +161,10 @@ function styleObj({ lgTextSizeArr, textSizeArr, ...theme }) {
 
 class TwoLineLabel_ extends Component {
 
-
+  static defaultProps = {
+    size: ["2.6rem", "2.6rem", "2.6rem", "2.6rem", "2.6rem"],
+    labelSize: ["2rem", "2rem", "2rem", "2rem", "2rem"],
+  }
   constructor(props, ctx) {
     super(props, ctx)
     //   console.log(props)
@@ -198,7 +201,12 @@ export const TwoLineLabelWithStyled = styled(TwoLineLabel_).withConfig({
     ${ (props) => {
 
 
-    const { size, ...rest } = props
+    const {
+
+      size = ["2.6rem", "2.6rem", "2.6rem", "2.6rem", "2.6rem"],
+      labelSize = ["2rem", "2rem", "2rem", "2rem", "2rem"],
+      ...rest
+    } = props
 
 
 
@@ -207,7 +215,6 @@ export const TwoLineLabelWithStyled = styled(TwoLineLabel_).withConfig({
       : typeof (size) === "string"
         ? [size]
         : size
-
 
     return {
       "&:first-of-type": {
