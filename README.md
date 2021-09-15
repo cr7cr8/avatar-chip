@@ -50,7 +50,7 @@ just label, no avatar
 
 Avatar with hover tip
 
-     <AvatarChip
+       <AvatarChip
         size={["1rem", "2rem", "3rem", "4rem", "5rem"]}  //avatarSize
         personName={"毛fdsdsdsdsdsd帅"}
         style={{ backgroundColor: "skyblue", color: "blue" }}
@@ -62,13 +62,18 @@ Avatar with hover tip
         }
         hoverContent={
           <>
-            <div style={{ display: "flex", justifyContent: "center" }}><AvatarLogo size={["2.8rem"]} personName={"毛fdsdsdsdsdsd帅"} /></div>
-            <Typography variant="h5" style={{ fontSize: "1rem", }}>
-              06355 马小帅
-              </Typography>
-            <Typography variant="h5" style={{ fontSize: "0.8rem", display: "block", color: "gray" }}>
-              银行总行法律合规部
-              </Typography>
+            <AvatarChip
+              size={["1rem", "2rem", "3rem", "4rem", "5rem"]}  //avatarSize
+              personName={"毛fdsdsdsdsdsd帅"}
+              style={{ backgroundColor: "skyblue", color: "blue" }}
+              onClick={function () { alert("clicked") }}
+              avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
+             // src="https://picsum.photos/200/300"
+              label={
+                <TwoLineLabel lineTop="06355 马小帅" lineDown="银行总行法律合规部" />
+              }
+            />
+
           </>
         }
       />
