@@ -8,13 +8,14 @@
 ------------------------------------
 import dependencies
 
-    import { Typography, Button, ButtonGroup, Container, Paper, Box, Avatar, Grid } from "@material-ui/core";
-    import { AvatarChip, AvatarLogo, } from "avatar-chip";
-
+    import React from "react"
+    import { AvatarChip, AvatarLogo, TwoLineLabel } from "./AvatarChip";
 
 default avatar is based on personName if "src" is not provided,     
 default label is based on personName, if "label" is not provided
-    
+default avatar  size: ["2.6rem", "2.6rem", "2.6rem", "2.6rem", "2.6rem"],
+default labelSize: ["2rem", "2rem", "2rem", "2rem", "2rem"],
+   
     <AvatarChip
         size={["5.2rem", "3.9rem", "2.6rem", "1.8rem"]}  //avatar size array for different screen width 
         labelSize={["4rem", "3rem", "2rem", "1.5rem"]}   //label size array for different screen width 
@@ -31,35 +32,39 @@ just avatar, no label
         avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
         src="https://picsum.photos/200/300" 
         labelOn={false}
-       
+        lift={9}  // shadow level
      />
 
 just label, no avatar
    
-    <AvatarChip
-        labelSize={["4rem", "3rem", "2rem", "1.5rem"]} 
+     <AvatarChip
+        labelSize={["4rem", "3rem", "2rem", "1.5rem"]}
         personName={"mike"}
+        bgColor="pink"
         onClick={function () { alert("hello mike") }}
         avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
-        src="https://picsum.photos/200/300" 
+        src="https://picsum.photos/200/300"
         logoOn={false}
-       
-     />
+
+      />
 
 
 
 Avatar with hover tip
 
-       <AvatarChip
+      <AvatarChip
         size={["1rem", "2rem", "3rem", "4rem", "5rem"]}  //avatarSize
         personName={"毛fdsdsdsdsdsd帅"}
-        style={{ backgroundColor: "skyblue", color: "blue" }}
+        bgColor="skyblue"
+        style={{ color: "blue" }}
         onClick={function () { alert("clicked") }}
         avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
         src="https://picsum.photos/200/300"
         label={
           <TwoLineLabel lineTop="06355 马小帅" lineDown="银行总行法律合规部" />
         }
+        logoOn={true}  
+        onDelete={function () { }}
         hoverContent={
           <>
             <AvatarChip
@@ -68,7 +73,7 @@ Avatar with hover tip
               style={{ backgroundColor: "skyblue", color: "blue" }}
               onClick={function () { alert("clicked") }}
               avatarProps={{ onClick: function (e) { e.stopPropagation(); alert("hi") } }}
-             // src="https://picsum.photos/200/300"
+              // src="https://picsum.photos/200/300"
               label={
                 <TwoLineLabel lineTop="06355 马小帅" lineDown="银行总行法律合规部" />
               }
