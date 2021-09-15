@@ -6,11 +6,11 @@ import { Avatar, Chip, Popover, Typography, } from "@material-ui/core";
 import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 
 import multiavatar from '@multiavatar/multiavatar';
-//import classNames from 'classnames';
+import classNames from 'classnames';
 import styled from 'styled-components'
 
-
-
+//const size = ["5.2rem", "3.9rem", "2.6rem", "1.8rem"]
+//const labelSize = ["4rem", "3rem", "2rem", "1.5rem"]
 const breakpoints = createBreakpoints({})
 function breakpointsAttribute(...args) {
   let xs = {}, sm = {}, md = {}, lg = {}, xl = {};
@@ -48,7 +48,7 @@ function flatten(arr) {
 
 
 
-function styleObj({ lgTextSizeArr, textSizeArr, breakpointsAttribute, multiplyArr, ...theme }) {
+function styleObj({ lgTextSizeArr, textSizeArr, ...theme }) {
   return {
     avatarCss: ({ size, personName, ...props }) => {
       const size_ = Array.isArray(size)
@@ -58,10 +58,11 @@ function styleObj({ lgTextSizeArr, textSizeArr, breakpointsAttribute, multiplyAr
           : lgTextSizeArr
 
       return {
-        ...breakpointsAttribute(["width", ...size_], ["height", ...size_]), //avatar size
+        ...breakpointsAttribute(["width", size_], ["height", size_]), //avatar size
       }
     },
-    chipCss: ({ size, personName, label, bgColor, lift = 3, logoOn = true, labelOn = true, labelSize, onDelete, ...props }) => {
+    chipCss: ({ size = ["1.3rem", "2.6rem", "3.9rem", "5.2rem"], personName, label, bgColor, lift = 3, logoOn = true, labelOn = true,
+      labelSize = ["1rem", "2rem", "3rem", "4rem"], onDelete, ...props }) => {
 
       const size_ = Array.isArray(size)
         ? size
@@ -74,7 +75,6 @@ function styleObj({ lgTextSizeArr, textSizeArr, breakpointsAttribute, multiplyAr
         : typeof (labelSize) === "string"
           ? [labelSize]
           : textSizeArr
-
       return {
 
         height: "auto",
@@ -82,7 +82,7 @@ function styleObj({ lgTextSizeArr, textSizeArr, breakpointsAttribute, multiplyAr
         backgroundColor: bgColor,
         padding: 0,
         margin: 0,
-        boxShadow: theme.shadows[lift],
+        // boxShadow: theme.shadows[lift],
 
 
         overflow: "hidden",
@@ -102,9 +102,9 @@ function styleObj({ lgTextSizeArr, textSizeArr, breakpointsAttribute, multiplyAr
           lineHeight: "100%",
           margin: 0,
           padding: 0,
-          ...breakpointsAttribute(["fontSize", labelSize_],
-            ["paddingLeft", labelOn ? multiplyArr(labelSize_, logoOn ? 0.15 : 0.5) : [0]],
-            ["paddingRight", labelOn ? multiplyArr(labelSize_, onDelete ? 0.15 : 0.5) : [0]]), // label size
+          ...breakpointsAttribute(["fontSize", labelSize_ || []],
+            ["paddingLeft", labelOn ? multiplyArr(labelSize_ || [], logoOn ? 0.15 : 0.5) : [0]],
+            ["paddingRight", labelOn ? multiplyArr(labelSize_ || [], onDelete ? 0.15 : 0.5) : [0]]), // label size
         },
         "& .MuiChip-deleteIcon": {
           margin: 0,
@@ -171,19 +171,19 @@ class TwoLineLabel_ extends Component {
     const { lineTop, lineDown, className, theme, ...props } = this.props
     const { typoUpCss, typoDownCss } = this.props.classes
 
-    // const allClassNamesTop = classNames({
-    //   [typoUpCss]: false,
-    //   [className]: true
-    // })
-    // const allClassNamesDown = classNames({
-    //   [typoDownCss]: false,
-    //   [className]: true
-    // })
+    const allClassNamesTop = classNames({
+      [typoUpCss]: false,
+      [className]: true
+    })
+    const allClassNamesDown = classNames({
+      [typoDownCss]: false,
+      [className]: true
+    })
     return (
 
       <>
-        <Typography color="textPrimary" className={className} >{lineTop}</Typography>
-        <Typography color="textSecondary" className={className} >{lineDown}</Typography>
+        <Typography color="textPrimary" className={allClassNamesTop} >{lineTop}</Typography>
+        <Typography color="textSecondary" className={allClassNamesDown} >{lineDown}</Typography>
       </>
     )
   }
@@ -198,46 +198,46 @@ export const TwoLineLabelWithStyled = styled(TwoLineLabel_).withConfig({
     ${ (props) => {
 
 
-const { theme: { textSizeArr, breakpointsAttribute, multiplyArr }, size, ...rest } = props
+    const { size, ...rest } = props
 
 
 
-const size_ = Array.isArray(size)
-  ? size
-  : typeof (size) === "string"
-    ? [size]
-    : textSizeArr
+    const size_ = Array.isArray(size)
+      ? size
+      : typeof (size) === "string"
+        ? [size]
+        : size
 
 
-return {
-  "&:first-of-type": {
-    lineHeight: "115%",
-    // backgroundColor:"pink",
-    margin: 0,
-    padding: 0,
-    ...breakpointsAttribute(
-      ["fontSize", multiplyArr(size_, 65 / 100)],
+    return {
+      "&:first-of-type": {
+        lineHeight: "115%",
+        // backgroundColor:"pink",
+        margin: 0,
+        padding: 0,
+        ...breakpointsAttribute(
+          ["fontSize", multiplyArr(size_, 65 / 100)],
 
-      //   ((!logoOn) && labelOn) ? ["marginLeft", multiplyArr(size_, 40 / 100)] : []// not updating with props updating logoOn labelOn
+          //   ((!logoOn) && labelOn) ? ["marginLeft", multiplyArr(size_, 40 / 100)] : []// not updating with props updating logoOn labelOn
 
-    ),
-  },
-  "&:first-of-type ~ &": {
-    lineHeight: "115%",
-    // backgroundColor:"pink",
-    margin: 0,
-    padding: 0,
-    ...breakpointsAttribute(
-      ["fontSize", multiplyArr(size_, 35 / 100)],
+        ),
+      },
+      "&:first-of-type ~ &": {
+        lineHeight: "115%",
+        // backgroundColor:"pink",
+        margin: 0,
+        padding: 0,
+        ...breakpointsAttribute(
+          ["fontSize", multiplyArr(size_, 35 / 100)],
 
-      //   ((!logoOn) && labelOn) ? ["marginLeft", multiplyArr(size_, 40 / 100)] : []// not updating with props updating logoOn labelOn
+          //   ((!logoOn) && labelOn) ? ["marginLeft", multiplyArr(size_, 40 / 100)] : []// not updating with props updating logoOn labelOn
 
-    ),
-  }
-}
+        ),
+      }
+    }
 
 
-}} 
+  }} 
 `
 
 
@@ -254,13 +254,18 @@ class AvatarLogo_ extends Component {
 class AvatarChip_ extends Component {
 
   static defaultProps = {
-    textSizeArr: ["1.5rem", "2rem", "2.5rem", "3rem", "3.5rem"],
-    factor: 1.3,
-    get lgTextSizeArr() { return this.multiplyArr(this.textSizeArr, this.factor) },
 
     multiplyArr,
-
+    factor: 1.3,
     breakpointsAttribute,
+
+    size: ["2.6rem", "2.6rem", "2.6rem", "2.6rem", "2.6rem"],
+
+    labelSize: ["2rem", "2rem", "2rem", "2rem", "2rem"],
+
+    logoOn: true,
+    labelOn: true,
+
 
   }
 
@@ -339,7 +344,9 @@ class AvatarChip_ extends Component {
 
           {...this.props.children && { label: this.props.children }}
 
-          {...(this.props.children && this.props.children.type && this.props.children.type.Naked && this.props.children.type.Naked.name === "TwoLineLabel_")
+          // {...(this.props.children && this.props.children.type && this.props.children.type.Naked && this.props.children.type.Naked.name === "TwoLineLabel_")
+          // && labelOn && {
+          {...(this.props && this.props.children && this.props.children.type && this.props.children.type.Naked && this.props.children.type.Naked.render.displayName === "Styled(TwoLineLabel_)")
           && labelOn && {
             label: <TwoLineLabel
               {...this.props.children.props}
