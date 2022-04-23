@@ -1,4 +1,4 @@
-### old branch __React avatar-chip based on  the Chip component of "material-ui" and "@multiavatar/multiavatar" package 
+### old2222 branch __React avatar-chip based on  the Chip component of "material-ui" and "@multiavatar/multiavatar" package 
 
 #### Note: previous version 2.0.13 was Buggy, fixed in later version
 
