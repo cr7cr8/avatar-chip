@@ -1,5 +1,7 @@
-### React avatar-chip based on  the Chip component of "material-ui" and "@multiavatar/multiavatar" package 
 
+### This package is based on Material 4, which is OUTDATED!!! Not recommending using it.
+
+### React avatar-chip based on  the Chip component of "material-ui" and "@multiavatar/multiavatar" package 
 #### Note: previous version 2.0.13 was Buggy, fixed in later version
 
 ![aCapture](https://user-images.githubusercontent.com/106660/132795601-b5862112-d3fb-43b6-a6fe-e28e78eb867c.JPG)
