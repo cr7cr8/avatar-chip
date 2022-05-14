@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 ### This package is based on Material 4, which is OUTDATED!!! Not recommending using it..
 
 
